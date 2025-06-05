@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DjangoChannels</title>
+</head>
+<body>
+    <h1>DjangoChannels</h1>
+    <script>
+        const socket = new WebSocket('ws://' + window.location.host + '/ws/myapp/');
+
+        socket.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+            console.log(data.message);
+        };
+    </script>
+</body>
+</html>
